@@ -1,3 +1,12 @@
+// BELAJAR JAVASCRIPT
+// DAY 1 = LOOPING
+// DAY 2 = DEFINING FUNCTION
+// DAY 3 = FUNCTION EXPRESSION
+// DAY 4 = ARROW FUNCTION
+// DAY 5 = SCOPE
+// DAY 6 = LATIHAN FUNCTION
+// DAY 7 = OBJECT
+
 // ======= BELAJAR LOOPING =======
 
 // for (let i = 3; i <= 6; i++) {
@@ -207,3 +216,82 @@
 //   console.log("setelah if " + nama);
 // }
 // salam();
+
+//  ===== LATIHAN FUNCTION ======
+// const barang = [
+//   { nama: "Beras", harga: 15000 },
+//   { nama: "Gula", harga: 12000 },
+//   { nama: "Minyak", harga: 20000 },
+//   { nama: "Telur", harga: 18000 },
+// ];
+// function tampilkanBarang() {
+//   console.log("======= Daftar Barang =======");
+//   for (let i = 0; i < barang.length; i++) {
+//     console.log(`${i + 1}. ${barang[i].nama} - Rp.${barang[i].harga}`);
+//   }
+//   console.log("================================");
+// }
+// function pilihBarang(pilihan) {
+//   let barangDipilih = barang.find(
+//     (item) => item.nama.toLowerCase() === pilihan.toLowerCase()
+//   );
+//   if (barangDipilih) {
+//     console.log("=============================");
+//     console.log("barang: " + barangDipilih.nama);
+//     console.log("harga: Rp." + barangDipilih.harga);
+//     console.log("=============================");
+//     return barangDipilih.harga;
+//   } else {
+//     console.log("barang tidak ditemukan");
+//     return 0;
+//   }
+// }
+// function totalHarga(barang1, barang2) {
+//   let total = barang1 + barang2;
+//   console.log("harga yang harus di bayar: Rp." + total);
+// }
+// tampilkanBarang();
+// let harga1 = pilihBarang("beras");
+// let harga2 = pilihBarang("gula");
+// totalHarga(harga1, harga2);
+
+// ======= LATIHAN FUNCTION 2 =======
+// function hitungDiskon(harga, diskon) {
+//   let totalDiskon = harga * (diskon / 100);
+//   let totalHarga = harga - totalDiskon;
+//   return totalHarga;
+// }
+// console.log(hitungDiskon(100000, 20));
+
+// function bandingkanAngka(a, b) {
+//   if (a > b) {
+//     return `${a} lebih besar dari ${b}`;
+//   } else if (a < b) {
+//     return `${a} lebih kecil dari ${b}`;
+//   } else {
+//     return `${a} sama dengan ${b}`;
+//   }
+// }
+// console.log(bandingkanAngka(5, 10));
+
+// function buatSalam(nama, waktu) {
+//   if (waktu === "pagi") {
+//     return ` selamat pagi ${nama}`;
+//   } else if (waktu === "siang") {
+//     return `selamat siang ${nama}`;
+//   } else if (waktu === "malam") {
+//     return `selamat malam ${nama}`;
+//   } else {
+//     return `hallo ${nama}`;
+//   }
+// }
+// let salam1 = buatSalam(`dani`, `malam`);
+// console.log(salam1);
+
+//  ======= BELAJAR OBJECT =======
+
+// const buku = { judul: "Belajar JS", penulis: "Yusron", tahun: 2023 };
+// console.table(buku);
+// buku.penerbit = "Erlangga";
+// buku.tahun = 2024;
+// console.table(buku);
