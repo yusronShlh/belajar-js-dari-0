@@ -290,8 +290,58 @@
 
 //  ======= BELAJAR OBJECT =======
 
-// const buku = { judul: "Belajar JS", penulis: "Yusron", tahun: 2023 };
+// const buku = {
+//   judul: "belajar js",
+//   penulis: "agung",
+//   tahun: "2024",
+// };
+// buku.penerbit = "gramedia";
+// buku.tahun = 2025;
 // console.table(buku);
-// buku.penerbit = "Erlangga";
-// buku.tahun = 2024;
-// console.table(buku);
+
+// function outer() {
+//   let count = 0;
+//   function inner() {
+//     count++;
+//     console.log("count sekarang: " + count);
+//   }
+//   return inner;
+// }
+// const counter = outer();
+// counter();
+// counter();
+// counter();
+
+// function createUser(name, age) {
+//   return {
+//     name: name,
+//     age: age,
+//     sayHi: function () {
+//       console.log(`Hai, aku ${name}, umurku ${age} tahun`);
+//     },
+//   };
+// }
+// const user1 = createUser("Agung", 20);
+// const user2 = createUser("dani", 23);
+// user1.sayHi();
+// user2.sayHi();
+
+function createCar(brand, year, age, info) {
+  return {
+    brand: brand,
+    year: year,
+    get age() {
+      return new Date().getFullYear() - this.year;
+    },
+    get info() {
+      return `mobil ${brand} di buat tahun ${year}, dan sekarang berumur ${this.age} tahun`;
+    },
+    honk: function () {
+      console.log("beep! beep!");
+    },
+  };
+}
+const car1 = createCar("toyota", 2020);
+car1.honk();
+console.log(car1.age);
+console.log(car1.info);
