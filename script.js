@@ -326,22 +326,99 @@
 // user1.sayHi();
 // user2.sayHi();
 
-function createCar(brand, year, age, info) {
-  return {
-    brand: brand,
-    year: year,
-    get age() {
-      return new Date().getFullYear() - this.year;
-    },
-    get info() {
-      return `mobil ${brand} di buat tahun ${year}, dan sekarang berumur ${this.age} tahun`;
-    },
-    honk: function () {
-      console.log("beep! beep!");
-    },
-  };
-}
-const car1 = createCar("toyota", 2020);
-car1.honk();
-console.log(car1.age);
-console.log(car1.info);
+// --- Latihan Factory Function ---
+
+// function createCar(brand, year, age, info) {
+//   return {
+//     brand: brand,
+//     year: year,
+//     get age() {
+//       return new Date().getFullYear() - this.year;
+//     },
+//     get info() {
+//       return `mobil ${brand} di buat tahun ${year}, dan sekarang berumur ${this.age} tahun`;
+//     },
+//     honk: function () {
+//       console.log("beep! beep!");
+//     },
+//   };
+// }
+// const car1 = createCar("toyota", 2020);
+// car1.honk();
+// console.log(car1.age);
+// console.log(car1.info);
+
+// function createStudent(name, scores) {
+//   return {
+//     name: name,
+//     scores: scores,
+//     get average() {
+//       let total = 0;
+//       for (let i = 0; i < this.scores.length; i++) {
+//         total += this.scores[i];
+//       }
+//       return total / this.scores.length;
+//     },
+//     get introduce() {
+//       return `Hallo, nama saya ${this.name}, dan nilai rata-rata saya adalah ${this.average}`;
+//     },
+//   };
+// }
+// const student1 = createStudent("alya", [80, 90, 75]);
+// console.log(student1.introduce);
+
+// ***** Private variables *****
+// function createAccount(name, initialBalance) {
+//   let balance = initialBalance;
+//   return {
+//     checkbalance() {
+//       return `saldo terakhir ${name} sebesar Rp.${balance}`;
+//     },
+//     deposit(amount) {
+//       balance += amount;
+//       return `terimakasih telah melakukan deposit sebesar Rp.${amount}, dan saldo anda serkarang Rp.${balance}`;
+//     },
+//     withdraw(amount) {
+//       if (amount <= balance) {
+//         balance -= amount;
+//         return `terimakasih telah melakukan penarikan sebesar Rp.${amount}, sisa saldo anda sekrang Rp.${balance}`;
+//       } else {
+//         return `maaf sisa saldo anda tidak mencukupi untuk melakukan penarikan sebesar Rp.${amount}, karena sisa saldo anda hanya sebesar Rp.${balance}`;
+//       }
+//     },
+//   };
+// }
+// const acc1 = createAccount("agung", 1000000);
+// console.log(acc1.checkbalance());
+// console.log(acc1.deposit(500000));
+// console.log(acc1.withdraw(2000000));
+
+//  ----- LATIHAN PRIVATAE VARIABLES -----
+
+// function createCount(initialCount = 0) {
+//   let count = initialCount;
+//   (increment = function () {
+//     count++;
+//     return count;
+//   }),
+//     (decrement = function () {
+//       count--;
+//       return count;
+//     }),
+//     (getValue = function () {
+//       return count;
+//     });
+//   return {
+//     increment,
+//     decrement,
+//     getValue,
+//   };
+// }
+
+// const counter = createCount();
+// counter.increment();
+// counter.increment();
+// console.log(counter.getValue());
+// counter.decrement();
+// console.log(counter.getValue());
+// console.log(counter.count);
