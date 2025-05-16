@@ -422,3 +422,69 @@
 // counter.decrement();
 // console.log(counter.getValue());
 // console.log(counter.count);
+
+// function createPasswordManager(initialPassword = "") {
+//   let password = initialPassword;
+//   function checkPassword(input) {
+//     return input === password;
+//   }
+//   function updatePassword(oldPassword, newPassword) {
+//     if (checkPassword(oldPassword)) {
+//       password = newPassword;
+//       return "berhasil update password";
+//     } else {
+//       return "gagal update password";
+//     }
+//   }
+//   function maskPassword() {
+//     return password.replace(/./g, "*");
+//   }
+//   return {
+//     checkPassword,
+//     updatePassword,
+//     maskPassword,
+//   };
+// }
+// const user = createPasswordManager("rahasia123");
+// console.log(user.checkPassword("salah"));
+// console.log(user.checkPassword("rahasia123"));
+
+// console.log(user.updatePassword("salah", "baru123"));
+// console.log(user.updatePassword("rahasia123", "rahasia456"));
+
+// console.log(user.checkPassword("baru123"));
+// console.log(user.maskPassword());
+
+function createTodoList() {
+  let todos = [];
+  function add(task) {
+    todos.push(task);
+  }
+  function remove(index) {
+    todos.splice(index, 1);
+  }
+  function list() {
+    return todos;
+  }
+  function clear() {
+    todos = [];
+  }
+  return {
+    add,
+    remove,
+    list,
+    clear,
+  };
+}
+const myTodos = createTodoList();
+myTodos.add("beli bahan makanan ");
+myTodos.add("belajar javascript");
+myTodos.add("ngoding sampai pagi");
+
+console.table(myTodos.list());
+
+myTodos.remove(1);
+console.table(myTodos.list());
+
+myTodos.clear();
+console.table(myTodos.list());
